@@ -3,14 +3,17 @@
 </header>
 
 <div>
+    <% if flash[:alert] %>
+    <div class="alert"><%= flash[:alert] %></div>
+    <% end %>
     <%= form_tag session_path do %>
 
         <div class="field">
             <%= label_tag :email %> <br/>
             <%= text_field_tag :email, params[:email] %>
         </div>
-
-        <div class="field">
+        <br>
+        <div class="field"><b>Password</b>
             <% label_tag :password %> <br/>
             <%= text_field_tag :password, params[:password] %>
         </div>
