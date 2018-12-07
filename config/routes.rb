@@ -2,7 +2,10 @@ Rails.application.routes.draw do
 
   root to: 'products#index'
 
-  resources :products, only: [:index, :show]
+  resources :products, only: [:index, :show] do
+  resources :categories, only: [:show]
+  end
+
   resources :categories, only: [:show]
 
   resource :cart, only: [:show] do
@@ -11,6 +14,10 @@ Rails.application.routes.draw do
   end
 
   resources :orders, only: [:create, :show]
+
+  resources :users, only: [:create, :new]
+  
+  resource :session, only: [:create, :new, :destroy]
 
   namespace :admin do
     root to: 'dashboard#show'

@@ -1,0 +1,25 @@
+<header class="page-header">
+    <h1>Login</h1>
+</header>
+
+<div>
+    <%= form_tag session_path do %>
+
+        <div class="field">
+            <%= label_tag :email %> <br/>
+            <%= text_field_tag :email, params[:email] %>
+        </div>
+
+        <div class="field">
+            <% label_tag :password %> <br/>
+            <%= text_field_tag :password, params[:password] %>
+        </div>
+
+        <div class="actions"><%= submit_tag "Login" %>
+        </div>
+
+        <% end %>
+
+    </div>
+</div>
+        
