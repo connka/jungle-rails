@@ -1,9 +1,10 @@
 class OrdersController < ApplicationController
+  before_action :current_user
 
   def show
     @order = Order.find(params[:id])
     @line_items = @order.line_items.all
-    @user = User.find(session[:user_id])
+    @user = @current_user
   end
 
   def create
@@ -11,6 +12,8 @@ class OrdersController < ApplicationController
     order  = create_order(charge)
     
     if order.valid?
+      UserMail.confirmation_email(@current_user, order).deliver_now
+
       empty_cart!
       redirect_to order, notice: 'Your Order has been placed.'
     else
