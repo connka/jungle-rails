@@ -35,9 +35,12 @@
   <%= render 'reviews/form' %>
 
   <h2>Reviews</h2>
-  <5 @product.reviews.each do |review| %>
-    <p> <%= @rating %>/5</p>
-    <p>=> <%= @review.description %></p>
-    <end>
+  <% @product.reviews.each do |review| %>
+    <hr>
+    <p>=> <%= review.rating %>/5</p>
+    <p>=> <%= review.description %></p>
+    <hr>
+  
+  <% end %>
 
   </section>
