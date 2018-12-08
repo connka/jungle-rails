@@ -2,18 +2,35 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
+## Updated
+
+* Product sold-out badge added
+* Added user login/registration
+* Admin settings:
+    * Category editing
+    * Admin pages now restricted with user authentication
+* Order details page (after order is complete)
+* Email receipt added
+* Fixed bug which allowed checkout with empty cart
+
+## Screenshots
+
+!["Screenshot of the main page from a visitor"](https://github.com/connka/jungle-rails/blob/master/docs/main_page_visitor.png)
+
+!["Screenshot of a product's reviews"](https://github.com/connka/jungle-rails/blob/master/docs/user_review.png)
+
+!["Screenshot of a completed purchase's order summary"](https://github.com/connka/jungle-rails/blob/master/docs/order_summary.png)
+
+!["Screenshot of the admin authentication signin"](https://github.com/connka/jungle-rails/blob/master/docs/admin_auth.png)
 
 ## Setup
 
 1. Fork & Clone
 2. Run `bundle install` to install dependencies
-3. Create `config/database.yml` by copying `config/database.example.yml`
-4. Create `config/secrets.yml` by copying `config/secrets.example.yml`
-5. Run `bin/rake db:reset` to create, load and seed db
-6. Create .env file based on .env.example
-7. Sign up for a Stripe account
-8. Put Stripe (test) keys into appropriate .env vars
-9. Run `bin/rails s -b 0.0.0.0` to start the server
+3. Run `bin/rake db:reset` to create, load and seed db
+4. Sign up for a Stripe account
+5. Put Stripe (test) keys into appropriate .env vars
+6. Run `bin/rails s -b 0.0.0.0` to start the server
 
 ## Stripe Testing
 
